@@ -66,24 +66,25 @@ def test(num_of_nodes):
 def main():
     nodes = (2, 4, 8, 16, 32, 64)
 
-    # recupero i tempi di SCC come risultato dei test
+
+    # get SCC times as a result of tests
     times = []
     for node in nodes:
         times.append(test(node))
 
-    # raccolgo in una lista il valore medio di ogni misurazione
+    # summon average values in a list
     times_to_plot = []
     for i in times:
         times_to_plot.append(mean(i))
 
-    # genero l'asse X
+    # generate X axis
     x_axis = []
     number_of_tests = len(nodes)
 
     for i in xrange(number_of_tests):
         x_axis.append(i)
 
-    # stampo i valori
+    # print values
     mp.plot(x_axis, times_to_plot)
     mp.title('Aggregato tempi di esecuzione algoritmo SCC')
     mp.show()
