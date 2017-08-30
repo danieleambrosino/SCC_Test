@@ -72,7 +72,7 @@ def main():
     for node in nodes:
         times.append(test(node))
 
-    # summon average values in a list
+    # collect average values in a list
     times_to_plot = []
     for i in times:
         times_to_plot.append(mean(i))
